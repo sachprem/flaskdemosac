@@ -10,5 +10,11 @@ def main():
 def index():
   return render_template('index.html')
 
+@app.route('/query', methods = ['POST'])
+def query():
+    ticker = request.form['ticker']
+    print("The ticker is '"+ticker+"'")
+    return redirect('/') 
+
 if __name__ == '__main__':
   app.run(port=33507)
