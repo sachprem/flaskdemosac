@@ -13,8 +13,13 @@ def index():
 @app.route('/query', methods = ['POST'])
 def query():
     ticker = request.form['ticker']
-    print("The ticker is '"+ticker+"'")
-    return redirect('/') 
+    price  = request.form['price']
+#    print("The ticker is '"+ticker+"'")
+    return redirect('/output.html') 
+
+@app.route('/output.html')
+def output():
+    return render_template('output.html',ticker=ticker, price=price)
 
 if __name__ == '__main__':
   app.run(port=33507)
