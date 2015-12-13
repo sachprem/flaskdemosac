@@ -32,7 +32,7 @@ def graph():
     # Create a polynomial line graph
     x = list(range(10))
     fig = figure(title="Polynomial")
-    fig.line(x, [i ** 2 for i in x], color='#0000FF', line_width=2)
+    fig.line(x, [i ** 2 for i in x], line_width=2)
     script, div = components(plot)
     return render_template('graph.html', script=script, div=div)
 
