@@ -21,7 +21,7 @@ def query():
     queryobj.append(ticker)
     queryobj.append(price)
 #    print("The ticker is '"+ticker+"'")
-    return redirect('/output.html') 
+    return redirect('/graph.html') 
 
 @app.route('/graph.html')
 def graph():
