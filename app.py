@@ -34,7 +34,7 @@ def graph():
     # extract the input values of Ticker and Price selection
     ticker = queryobj[0]
     price = queryobj[1]
-    pricelist = {'Closing Price':'5','Adjusted Closing Price':'12','Opening Price':'2','Adjusted Opening Price':'9'}
+    pricelist = {'Closing Price':'4','Adjusted Closing Price':'11','Opening Price':'1','Adjusted Opening Price':'8'}
     #r = requests.get('https://www.quandl.com/api/v3/datasets/WIKI/AAPL/data.json?start_date=2015-11-01&end_date=2015-12-11&column_index=2')
     r = requests.get('https://www.quandl.com/api/v3/datasets/WIKI/'+ticker+'/data.json?start_date=2015-11-01&end_date=2015-12-11&column_index='+pricelist[price])
     rj = r.json()
