@@ -44,7 +44,8 @@ def graph():
     values = dfsort.Value.tolist()
     fig = figure(title='Data from Quandle WIKI set',
               x_axis_label='date',
-              x_axis_type='datetime')
+              x_axis_type='datetime'
+              y_axis_label=price)
    # Create a polynomial line graph
 #    x = list(range(10))
 #    fig = figure(title="Polynomial")
