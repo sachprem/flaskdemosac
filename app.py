@@ -33,7 +33,7 @@ def graph():
     x = list(range(10))
     fig = figure(title="Polynomial")
     fig.line(x, [i ** 2 for i in x], line_width=2)
-    script, div = components(plot)
+    script, div = components(fig)
     return render_template('graph.html', script=script, div=div)
 
 @app.route('/output.html')
