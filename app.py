@@ -23,7 +23,7 @@ def index():
 def query():
     ticker = request.form['ticker']
     price  = request.form['price']
-    queryobj = []
+    del queryobj[:]
     queryobj.append(ticker)
     queryobj.append(price)
 #    print("The ticker is '"+ticker+"'")
