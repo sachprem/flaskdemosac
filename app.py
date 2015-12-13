@@ -36,9 +36,9 @@ def graph():
     dfsort = df.sort('Day')
     dates = dfsort.Day.tolist()
     values = dfsort.Value.tolist()
-    fig = figure(title='Data from Quandle WIKI set',
-              x_axis_label='date',
-              x_axis_type='datetime')
+    fig = figure(title='Data from Quandle WIKI set')
+#              x_axis_label='date',
+#              x_axis_type='datetime')
 #    # Create a polynomial line graph
 #    x = list(range(10))
 #    fig = figure(title="Polynomial")
