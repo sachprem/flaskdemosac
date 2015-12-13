@@ -1,6 +1,7 @@
 from pandas import DataFrame
 import pandas as pd
 import requests
+from datetime import datetime
 
 from flask import Flask, render_template, request, redirect
 from bokeh.plotting import figure
@@ -37,13 +38,16 @@ def graph():
     dates = dfsort.Day.tolist()
     values = dfsort.Value.tolist()
     fig = figure(title='Data from Quandle WIKI set')
-#              x_axis_label='date',
-#              x_axis_type='datetime')
+              x_axis_label='date',
+              x_axis_type='datetime')
 #    # Create a polynomial line graph
 #    x = list(range(10))
 #    fig = figure(title="Polynomial")
 #    fig.line(x, [i ** 2 for i in x], line_width=2)
-    fig.line(dates,values,line_width=2)
+    dt2 = []
+    for d in dates
+	dt2.append(datetime.strptime(d,'%Y-%m-%d'))
+    fig.line(dt2,values,line_width=2)
     script, div = components(fig)
     return render_template('graph.html', script=script, div=div)
 
