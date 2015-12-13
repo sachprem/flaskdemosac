@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect
+from bokeh.plotting import figure
+from bokeh.embed import components 
 
 queryobj = []
 
@@ -19,7 +21,20 @@ def query():
     queryobj.append(ticker)
     queryobj.append(price)
 #    print("The ticker is '"+ticker+"'")
-    return redirect('/output.html') 
+    return redirect('/graph.html') 
+
+@app.route('/graph.html')
+def graph():
+#    plot = figure(tools=TOOLS,
+#              title='Data from Quandle WIKI set',
+#              x_axis_label='date',
+#              x_axis_type='datetime')
+    # Create a polynomial line graph
+    x = list(range(10))
+    fig = figure(title="Polynomial")
+    fig.line(x, [i ** 2 for i in x], color='#0000FF', line_width=2)
+    script, div = components(plot)
+    return render_template('graph.html', script=script, div=div)
 
 @app.route('/output.html')
 def output():
