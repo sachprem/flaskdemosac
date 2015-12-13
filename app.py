@@ -34,8 +34,8 @@ def graph():
     ticker = queryobj[0]
     price = queryobj[1]
     pricelist = {'Closing Price':1,'Adjusted Closing Price':2,'Opening Price':3,'Adjusted Opening Price':4}
-    # r = requests.get('https://www.quandl.com/api/v3/datasets/WIKI/AAPL/data.json?start_date=2015-11-01&end_date=2015-12-11&column_index=2')
-    r = requests.get('https://www.quandl.com/api/v3/datasets/WIKI/'+ticker+'/data.json?start_date=2015-11-01&end_date=2015-12-11&column_index='+pricelist[price])
+    r = requests.get('https://www.quandl.com/api/v3/datasets/WIKI/AAPL/data.json?start_date=2015-11-01&end_date=2015-12-11&column_index=2')
+    #r = requests.get('https://www.quandl.com/api/v3/datasets/WIKI/'+ticker+'/data.json?start_date=2015-11-01&end_date=2015-12-11&column_index='+pricelist[price])
     rj = r.json()
     rjdata = rj.get('dataset_data').get('data')
     df = pd.DataFrame(data=rjdata,columns=['Day','Value'])
