@@ -54,7 +54,7 @@ def graph():
 	dt2.append(datetime.strptime(d,'%Y-%m-%d'))
     fig.line(dt2,values,line_width=2)
     script, div = components(fig)
-    return render_template('graph.html', script=script, div=div)
+    return render_template('graph.html', script=script, div=div, ticker=ticker, price=price)
 
 @app.route('/output.html')
 def output():
